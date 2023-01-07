@@ -2,7 +2,7 @@ node {
     def mvnHome = tool name: 'maven_path', type: 'maven'
     stage('SCM Checkout') { 
         git branch: 'main', credentialsId: 'git-credentials', 
-		url: 'https://github.com/vikas99341/hello-world.git' 
+		url: 'https://github.com/magellis78/junit-sample.git' 
     } 
     stage('Compile') { 
         sh "${mvnHome}/bin/mvn compile"  
