@@ -1,0 +1,10 @@
+node { 
+    def mvnHome = tool name: 'maven_path', type: 'maven'
+    stage('SCM Checkout') { 
+        git branch: 'main', credentialsId: 'git-credentials', 
+		url: 'https://github.com/devops-trainer/GolSelTest.git' 
+    } 
+    stage('Test') { 
+        sh "${mvnHome}/bin/mvn test" 
+    }
+}
